@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -19,6 +20,10 @@
 </div>
 
 <div class="container">
+
+    <!-- Hidden slug for JS to use -->
+    <div id="post-data" data-slug="{{ post.slug }}" style="display:none;"></div>
+
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
@@ -107,8 +112,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" class="btn
-          btn-danger">Delete</a>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
