@@ -1,7 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User # Import models to connect
 from cloudinary.models import CloudinaryField
-# Import models to connect
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -34,7 +33,6 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    new_field = models.SlugField(blank=True, null=True, verbose_name="Slug or Tag (optional)")
 
     class Meta:
         ordering = ["created_on"]
